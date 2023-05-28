@@ -1,0 +1,22 @@
+body {
+    font-family: Helvetica, sans-serif;
+    background-color: rgb(238, 238, 238);
+}
+
+article{
+    padding-left: 20px;
+    box-sizing: border-box;
+    width: 50%;
+}
+
+aside{
+    width: 50%;
+    vertical-align: top;
+    float: right; 
+}
+
+img{
+    width: 400px;
+    height: 280px;
+}
+
