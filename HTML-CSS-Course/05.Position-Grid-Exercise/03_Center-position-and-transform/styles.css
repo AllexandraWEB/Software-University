@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(238, 238, 238);
+}
+
+.card {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background-color: rgb(255, 255, 255);
+   width: 31.2rem;
+   height: 34rem;
+   box-shadow: 1px 1px 20px 1px #888888;
+}
+
+img{
+    position: absolute;
+}
+
+h3{
+   font-family: Georgia, serif;
+   font-size: 1.2em;
+}
+
+h3,
+p {
+  margin: 1rem;
+  top: 200px;
+}
+
+.text {
+    position: absolute;
+    top: 340px;
+    left: 10px;
+}
+
+#button {
+    background-color: rgb(0, 153, 0);
+    color: white;
+    padding: 0.6rem 1.5rem;
+    position: absolute;
+    top: 130px;
+    left: 350px;
+    border-radius: 0.3rem;
+    border: green;
+
+}
+
+span {
+    color: white;
+    font-size: 0.9rem;
+}
+
+a:link {
+     text-decoration: none;
+}
+
+
+
