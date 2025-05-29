@@ -33,14 +33,12 @@ function carFactory(inputOrder) {
     
 }
 
-let result = carFactory({ model: 'VW Golf II',
-
+let result = carFactory({ 
+    
+model: 'VW Golf II',
 power: 90,
-
 color: 'blue',
-
 carriage: 'hatchback',
-
 wheelsize: 14 })
 
 console.log(result);
