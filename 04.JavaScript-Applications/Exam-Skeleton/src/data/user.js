@@ -1,5 +1,5 @@
 import { clearUserData, setUserData } from "../utils/utils.js";
-import { post } from "./request.js";
+import { get, post } from "./request.js";
 
 const endpoints = {
     login: "/users/login",

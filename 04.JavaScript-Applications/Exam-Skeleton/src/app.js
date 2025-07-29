@@ -1,5 +1,10 @@
-import * as api from "./data/request.js"
-import * as userApi from "./data/user.js"
+import { page } from "./lib.js"
+import { addRender } from "./utils/render.js";
+import { homeView } from "./views/home.js"
 
-window.api = api;
-window.userApi = userApi;
+page(addRender);
+
+//TODO Bind project URLs to view handlers
+page("/", homeView);
+
+page.start();
