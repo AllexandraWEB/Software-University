@@ -19,7 +19,6 @@ export async function getDroneById(id) {
 }
 
 // TODO Enter record properties
-// It expects two parameters to create - example await api.create("Harry Poter", "Prisoner of Azkaban")
 export async function createDrone(
     model,
     imageUrl,
