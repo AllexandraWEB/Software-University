@@ -1,5 +1,6 @@
 import { register } from "../data/user.js";
 import { html } from "../lib.js"
+import { showError } from "../utils/notify.js";
 import { updateNav } from "../utils/utils.js";
 
 const registerTemplate = (onRegister) => html`
@@ -42,7 +43,7 @@ export function registerView(ctx) {
             ctx.page.redirect("/");
 
         } catch (error) {
-            alert(error.message)
+            showError(error.message) // It was alert(error.message). Change the alert() for the bonus points
         }
     };
 }

@@ -1,5 +1,6 @@
 import { getDroneById, updateDrone } from "../data/drones.js";
 import { html } from "../lib.js"
+import { showError } from "../utils/notify.js";
 
 const editTemplate = (droneData, onEdit) => html`
       <section id="edit">
@@ -48,7 +49,7 @@ export async function editView(ctx) {
 
             ctx.page.redirect("/catalog/" + id);
         } catch (error) {
-            alert(error.message);
+            showError(error.message); // It was alert(error.message). Change the alert() for the bonus points
         }
     }
 }

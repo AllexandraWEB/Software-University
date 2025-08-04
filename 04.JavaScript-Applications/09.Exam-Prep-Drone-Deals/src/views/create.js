@@ -1,5 +1,6 @@
 import { createDrone } from "../data/drones.js";
 import { html } from "../lib.js"
+import { showError } from "../utils/notify.js";
 
 const createTemplate = (onCreate) => html`
       <section id="create">
@@ -44,7 +45,7 @@ export function createView(ctx) {
 
             ctx.page.redirect("/catalog");
         } catch (error) {
-            alert(error.message);
+            showError(error.message); // It was alert(error.message). Change the alert() for the bonus points
         }
     }
 }
