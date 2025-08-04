@@ -10,3 +10,10 @@
  export function clearUserData() {
     return sessionStorage.removeItem("userData"); // Removes the "userData" item from sessionStorage.
  }
+
+//  export function updateNav() {
+//    const userData = getUserData();
+
+//    document.querySelector(".user").style.display = userData ? "" : "none";
+//    document.querySelector(".guest").style.display = userData ? "none" : "";
+// }

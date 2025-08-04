@@ -20,36 +20,36 @@ const editTemplate = (droneData, onEdit) => html`
       </section>`
 
 export async function editView(ctx) {
-    const id = ctx.params.id;
+  const id = ctx.params.id;
 
-    const droneData = await getDroneById(id);
+  const droneData = await getDroneById(id);
 
-    ctx.render(editTemplate(droneData, onEdit));
+  ctx.render(editTemplate(droneData, onEdit));
 
-    async function onEdit(event) {
-        event.preventDefault();
+  async function onEdit(event) {
+    event.preventDefault();
 
-        const formData = new FormData(event.currentTarget);
-        const {
-            model,
-            imageUrl,
-            price,
-            weight,
-            phone,
-            condition,
-            description,
-        } = Object.fromEntries(formData.entries());
+    const formData = new FormData(event.currentTarget);
+    const {
+      model,
+      imageUrl,
+      price,
+      weight,
+      phone,
+      condition,
+      description,
+    } = Object.fromEntries(formData.entries());
 
-        try {
-            if (!model || !imageUrl || !price || !weight || !phone || !condition || !description) {
-                throw new Error("All fields are required!");
-            }
+    try {
+      if (!model || !imageUrl || !price || !weight || !phone || !condition || !description) {
+        throw new Error("All fields are required!");
+      }
 
-            await updateDrone(id, {model, imageUrl, price, condition, weight, phone, description});
+      await updateDrone(id, { model, imageUrl, price, condition, weight, phone, description });
 
-            ctx.page.redirect("/catalog/" + id);
-        } catch (error) {
-            showError(error.message); // It was alert(error.message). Change the alert() for the bonus points
-        }
+      ctx.page.redirect("/catalog/" + id);
+    } catch (error) {
+      showError(error.message); // It was alert(error.message). Change the alert() for the bonus points
     }
+  }
 }
