@@ -40,9 +40,9 @@ export async function likeSolution(solutionId) {
 }
 
 export async function getTotalLikes(solutionId) {
-    return post(endpoints.totalLikes(solutionId));
+    return get(endpoints.totalLikes(solutionId));
 }
 
 export async function getUserLike(solutionId, userId) {
-    return post(endpoints.userLike(solutionId, userId));
+    return get(endpoints.userLike(solutionId, userId));
 }

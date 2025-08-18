@@ -21,8 +21,6 @@ async function request(method, url, data) {
     }
 
     const res = await fetch(hostname + url, options);
-    // console.log(res);
-    
 
     if (!res.ok) {
         const error = await res.json()

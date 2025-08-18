@@ -7,6 +7,7 @@ import { del, get, post, put } from "./request.js"
 const endpoints = {
     all: "/data/collection",
     byId: "/data/collection/",
+    create: "/data/collection/",
 }
 
 export async function getAll() {
@@ -18,9 +19,8 @@ export async function getById(id) {
 }
 
 // TODO Enter record properties
-// It expects two parameters to create - example await api.create("Harry Poter", "Prisoner of Azkaban")
 export async function create(prop1, prop2) {
-    return post(endpoints.all, { prop1, prop2 });
+    return post(endpoints.create, { prop1, prop2 });
 }
 
 export async function update(id, record) {
