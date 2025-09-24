@@ -22,7 +22,7 @@ const server = http.createServer(async (req, res) => {
     res.write(siteCss);
   }
   res.end();
-});
+}); 
 
 server.listen(PORT, () => {
   console.log(`Server is listening on http://localhost:${PORT}...`);
