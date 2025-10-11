@@ -1,24 +1,43 @@
-import express from 'express'
-import handlebars from 'express-handlebars'
-import routes from './routes.js';
+import express from "express";
+import handlebars from "express-handlebars";
+import mongoose from "mongoose";
+
+import routes from "./routes.js";
+
 const app = express();
 
-// Setup Handlebars
-app.engine('hbs', handlebars.engine({
-    extname: 'hbs',
-}));
+// Setup Database
+try {
+  const url = "mongodb://localhost:27017";
+  await mongoose.connect(url, {
+    dbName: "movie-magic",
+  });
+  console.log("Successfully connected to DB");
+} catch (err) {
+  console.error("Cannot connect to DB", err.message);
+}
 
-app.set('view engine', 'hbs');
-app.set('views', 'src/views');
+// Setup Handlebars
+app.engine(
+  "hbs",
+  handlebars.engine({
+    extname: "hbs",
+  })
+);
+
+app.set("view engine", "hbs");
+app.set("views", "src/views");
 
 // Setup static middleware
-app.use(express.static('src/public'));
+app.use(express.static("src/public"));
 
 // Parse form data from req
-app.use(express.urlencoded()); 
+app.use(express.urlencoded());
 
 // Routes
 app.use(routes);
 
 // Start Server
-app.listen(3000, () => console.log('Server is listening on http://localhost:3000...'));
+app.listen(3000, () =>
+  console.log("Server is listening on http://localhost:3000...")
+);
