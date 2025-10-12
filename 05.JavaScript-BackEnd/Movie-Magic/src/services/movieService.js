@@ -1,8 +1,14 @@
 import Movie from "../models/Movie.js";
 
 export default {
-    getAll(filter) {
-        return Movie.find(filter);
+    async getAll(filter) {
+        // First way to solve the issue with handlebars - used .lean()
+        // const result = await Movie.find(filter).lean();
+
+        // Second way to solve the issue with handlebars - added allowProtoMethodsByDefault and allowProtoPropertiesByDefault
+        const result = await Movie.find(filter);
+
+        return result;
     },
     getOne(movieId) {
         return Movie.findOne({_id: movieId});
@@ -10,8 +16,10 @@ export default {
     create(movieData) {
         movieData.rating = Number(movieData.rating);
 
-        const movie = new Movie(movieData);
+        return Movie.create(movieData);
 
-        return movie.save();
+        // or we can use instead
+        // const movie = new Movie(movieData);
+        // return movie.save();
     }
 }
