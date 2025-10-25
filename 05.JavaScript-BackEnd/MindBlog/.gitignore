@@ -1,0 +1,50 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Build and coverage directories
+dist/
+build/
+coverage/
+.nyc_output/
+
+# Environment variables
+.env
+.env.*
+!.env.example  # keep a sample env file if you have one
+
+# Cache
+.cache/
+.tmp/
+.temp/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Optional npm/yarn/pnpm logs
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Debug
+debug.log
